@@ -103,9 +103,9 @@ class Enrollment(models.Model):
     # Other fields and methods you would like to design
 class Question(models.Model):
     # Foreign key to lesson
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+     courses = models.ManyToManyField(Course)
     # question text
-    qtext = models.CharField(max_length=200)
+    question_text = models.CharField(max_length=200)
     # question grade/mark
     qgrade = models.IntegerField(default=50)
 
